@@ -1,0 +1,17 @@
+﻿<Application x:Class="WorldBuildingTool.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:WorldBuildingTool">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/ButtonStyleDark.xaml"/>
+                <ResourceDictionary Source="Styles/LabelStyleDark.xaml"/>
+                <ResourceDictionary Source="Styles/MenuStyleDark.xaml"/>
+                <ResourceDictionary Source="Styles/MenuItemStyleDark.xaml"/>
+                <ResourceDictionary Source="Styles/TabControlStyleDark.xaml"/>
+                <ResourceDictionary Source="Styles/TabItemStyleDark.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
