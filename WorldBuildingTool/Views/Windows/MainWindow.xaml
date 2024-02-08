@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WorldBuildingTool"
-        xmlns:Views="clr-namespace:WorldBuildingTool.View"
+        xmlns:Controls="clr-namespace:WorldBuildingTool.Views.Controls"
         Title="MainWindow" Height="450" Width="800">
     <Window.Resources>
         <ResourceDictionary>
@@ -25,7 +25,7 @@
                     <MenuItem Header="Help"/>
                 </Menu>
             </StackPanel>
-            <Views:TimelineControl x:Name="timeline" DockPanel.Dock="Bottom"
+            <Controls:TimelineControl x:Name="timeline" DockPanel.Dock="Bottom"
                                    DataContext="{Binding TimelineViewModel}"
                                    />
             <Border x:Name="timeline_border" DockPanel.Dock="Bottom" Background="{StaticResource Button.Selected.ForegroundBrush}" MinHeight="4"/>
@@ -34,7 +34,8 @@
                         FontSize="26">
                 <TabItem Header="Maps">
                     <Grid>
-                        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">Maps</TextBlock>
+                        <!--TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">Maps</TextBlock-->
+                        <Controls:MapControl x:Name="mapcontrol"/>
                     </Grid>
                 </TabItem>
                 <TabItem Header="Places">
@@ -45,6 +46,11 @@
                 <TabItem Header="Actors">
                     <Grid>
                         <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">Actors</TextBlock>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Regions">
+                    <Grid>
+                        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">Regions</TextBlock>
                     </Grid>
                 </TabItem>
             </TabControl>

@@ -6,7 +6,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WorldBuildingTool.ViewModels;
 
-namespace WorldBuildingTool.View
+namespace WorldBuildingTool.Views.Controls
 {
     /// <summary>
     /// Interaktionslogik für TimelineControl.xaml
