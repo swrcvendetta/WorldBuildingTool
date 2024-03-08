@@ -2,6 +2,7 @@
 using System.Data;
 using System.Windows;
 using WorldBuildingTool.ViewModels;
+using WorldBuildingTool.Views.Windows;
 
 namespace WorldBuildingTool
 {

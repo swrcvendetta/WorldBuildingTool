@@ -10,7 +10,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 
-namespace WorldBuildingTool
+namespace WorldBuildingTool.Views.Windows
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
