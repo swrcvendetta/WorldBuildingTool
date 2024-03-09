@@ -45,7 +45,8 @@
                 </TabItem>
                 <TabItem Header="Actors">
                     <Grid>
-                        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">Actors</TextBlock>
+                        <!--TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">Actors</TextBlock-->
+                        <Controls:ActorControl x:Name="ActorControl"/>
                     </Grid>
                 </TabItem>
                 <TabItem Header="Regions">

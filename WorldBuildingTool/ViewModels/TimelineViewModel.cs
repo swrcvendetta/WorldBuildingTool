@@ -33,7 +33,7 @@ namespace WorldBuildingTool.ViewModels
 
         private void _timeline_PropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            CurrentTick = _timeline.currentTick;
+            CurrentTick = _timeline.CurrentTick;
         }
 
         public bool IsPlaying
@@ -59,10 +59,10 @@ namespace WorldBuildingTool.ViewModels
 
         public double CurrentTick
         {
-            get => _timeline.currentTick;
+            get => _timeline.CurrentTick;
             set
             {
-                _timeline.currentTick = value;
+                _timeline.CurrentTick = value;
                 OnPropertyChanged(nameof(CurrentTick));
             }
         }

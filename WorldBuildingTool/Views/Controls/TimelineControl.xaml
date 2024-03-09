@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:WorldBuildingTool.Views.Controls"
              xmlns:vm="clr-namespace:WorldBuildingTool.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             MinHeight="80">
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MinHeight="80" MinWidth="200" Background="{StaticResource BackgroundBrush}">
         <Border>
             <Grid>
@@ -35,17 +36,17 @@
                         <ColumnDefinition Width="1*" MinWidth="50"/>
                     </Grid.ColumnDefinitions>
                     <StackPanel Grid.Column="0" HorizontalAlignment="Left" Margin="1">
-                        <Button x:Name="btn_jumpToVeryFirstTick">◄◄</Button>
+                        <Button x:Name="btn_jumpToVeryFirstTick">|◀◀</Button>
                     </StackPanel>
                     <StackPanel Grid.Column="1" HorizontalAlignment="Center" Orientation="Horizontal" Margin="1">
-                        <Button x:Name="btn_prevTick" Margin="2, 0" Command="{Binding PreviousTickCommand}">◄</Button>
-                        <Button x:Name="btn_prevSubTick" Margin="2, 0" Command="{Binding PreviousSubTickCommand}">-</Button>
-                        <Button x:Name="btn_TogglePlay" Margin="2, 0" Command="{Binding TogglePlayCommand}">Play/Pause</Button>
-                        <Button x:Name="btn_nextSubTick" Margin="2, 0" Command="{Binding NextSubTickCommand}">+</Button>
-                        <Button x:Name="btn_nextTick" Margin="2, 0" Command="{Binding NextTickCommand}">►</Button>
+                        <Button x:Name="btn_prevTick" Margin="2, 0" Command="{Binding PreviousTickCommand}">◀</Button>
+                        <Button x:Name="btn_prevSubTick" Margin="2, 0" Command="{Binding PreviousSubTickCommand}">➖</Button>
+                        <Button x:Name="btn_TogglePlay" Margin="2, 0" Command="{Binding TogglePlayCommand}">▶⏸</Button>
+                        <Button x:Name="btn_nextSubTick" Margin="2, 0" Command="{Binding NextSubTickCommand}">➕</Button>
+                        <Button x:Name="btn_nextTick" Margin="2, 0" Command="{Binding NextTickCommand}">▶</Button>
                     </StackPanel>
                     <StackPanel Grid.Column="2" HorizontalAlignment="Right" Margin="1">
-                        <Button x:Name="btn_jumpToVeryLastTick">►►</Button>
+                        <Button x:Name="btn_jumpToVeryLastTick">▶▶|</Button>
                     </StackPanel>
                 </Grid>
                 <Grid Grid.Row="2">

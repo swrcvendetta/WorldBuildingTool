@@ -5,7 +5,7 @@
         public bool bIsPlaying;
         public double firstTick;
         public double lastTick;
-        public double currentTick;
+        private double _currentTick;
 
 
         CancellationTokenSource CTS;
@@ -15,7 +15,7 @@
             this.bIsPlaying = false;
             this.firstTick = 0.0;
             this.lastTick = 0.0;
-            this.currentTick = 0.0;
+            this._currentTick = Timeline.Tick;
 
             CTS = new CancellationTokenSource();
         }
@@ -25,8 +25,24 @@
             this.bIsPlaying = false;
             this.firstTick = firstTick;
             this.lastTick = lastTick;
-            this.currentTick = currentTick;
+            Timeline.Tick = currentTick;
+            this._currentTick = Timeline.Tick;
             CTS = new CancellationTokenSource();
+        }
+
+        public double CurrentTick
+        {
+            get => this._currentTick;
+            set
+            {
+                if(this._currentTick != value)
+                {
+                    Timeline.Tick = value;
+                    _currentTick = value;
+
+                    OnPropertyChanged(nameof(CurrentTick));
+                }
+            }
         }
 
         public void ToggleTimer()
@@ -45,9 +61,10 @@
 
         void IncreaseTick()
         {
-            this.currentTick = Math.Round(currentTick + 0.2, 1);
+            Timeline.Tick = Timeline.Tick + 0.2;
+            this._currentTick = Timeline.Tick;
             
-            OnPropertyChanged(nameof(currentTick));
+            OnPropertyChanged(nameof(CurrentTick));
         }
 
         public class PeriodicTask

@@ -17,7 +17,7 @@ namespace WorldBuildingTool.Views.Windows
     /// </summary>
     public partial class MainWindow : Window
     {
-        double windowHeightOffset = 40.0;
+        private readonly double WINDOW_HEIGHT_OFFSET = 40.0;
         private bool bSelectedBorder_Timeline;
         public MainWindow()
         {
@@ -46,7 +46,12 @@ namespace WorldBuildingTool.Views.Windows
         {
             if (bSelectedBorder_Timeline)
             {
-                this.timeline.Height = this.ActualHeight - e.GetPosition(this).Y - windowHeightOffset;
+                double newHeight = this.ActualHeight - e.GetPosition(this).Y - WINDOW_HEIGHT_OFFSET;
+
+                if(newHeight >= this.timeline.MinHeight && newHeight <= this.ActualHeight - this.timeline_border.MinHeight - this.pnl_Menu.ActualHeight - WINDOW_HEIGHT_OFFSET)
+                {
+                    this.timeline.Height = newHeight;
+                }
             }
         }
     }
