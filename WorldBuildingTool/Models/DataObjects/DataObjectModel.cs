@@ -8,12 +8,14 @@ using System.Windows.Controls;
 
 namespace WorldBuildingTool.Models.DataObjects
 {
-    public class DataObjectModel : ModelBase
+    public abstract class DataObjectModel : ModelBase
     {
         private string name;
         private string description;
         private double dateOfBirth;
         private double dateOfDeath;
+        private double x;
+        private double y;
         private Image previewImage;
 
         public int ID { get; protected set; }
@@ -25,6 +27,8 @@ namespace WorldBuildingTool.Models.DataObjects
             this.description = "";
             this.dateOfBirth = 0.0;
             this.dateOfDeath = 0.0;
+            this.x = 0.0;
+            this.y = 0.0;
             this.previewImage = previewImage;   // add default image here
             // Validations
             this.Name = name;
@@ -82,6 +86,30 @@ namespace WorldBuildingTool.Models.DataObjects
                         dateOfDeath = value;
 
                     OnPropertyChanged(nameof(dateOfDeath));
+                }
+            }
+        }
+        public double X
+        {
+            get => x;
+            set
+            {
+                if(x != value)
+                {
+                    x = value;
+                    OnPropertyChanged(nameof(x));
+                }
+            }
+        }
+        public double Y
+        {
+            get => y;
+            set
+            {
+                if (y != value)
+                {
+                    y = value;
+                    OnPropertyChanged(nameof(y));
                 }
             }
         }
